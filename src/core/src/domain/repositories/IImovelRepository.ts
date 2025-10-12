@@ -1,9 +1,21 @@
-import { Imovel } from '../entities/Imovel';
+import { Imovel, ImovelCategoria } from '../entities/Imovel';
+
+export interface ImovelFilters {
+  categoria?: ImovelCategoria;
+  valorMin?: number;
+  valorMax?: number;
+  bairroId?: string;
+  incluirDeletados?: boolean;
+}
 
 export interface IImovelRepository {
-  save(loan: Imovel): Promise<void>;
+  save(imovel: Imovel): Promise<void>;
   findById(id: string): Promise<Imovel | null>;
-  findByUserId(userId: string): Promise<Imovel[]>;
-  findCurrentLoanOfRecord(vinylRecordId: string): Promise<Imovel | null>;
-  update(loan: Imovel): Promise<void>;
+  findByCodigo(codigo: string): Promise<Imovel | null>;
+  findBySlug(slug: string): Promise<Imovel | null>;
+  findAll(filters?: ImovelFilters): Promise<Imovel[]>;
+  findByBairro(bairroId: string): Promise<Imovel[]>;
+  findByCategoria(categoria: ImovelCategoria): Promise<Imovel[]>;
+  update(imovel: Imovel): Promise<void>;
+  delete(id: string): Promise<void>;
 }
