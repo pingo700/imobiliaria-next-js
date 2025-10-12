@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 454 164" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(5.68542,0,0,5.68542,-3.03792,13.7749)">
+        <path d="M22,16.001C21.999,17.07 21.426,18.061 20.5,18.596L20.496,18.598L13.496,22.598C12.571,23.131 11.429,23.131 10.504,22.598L3.504,18.598L3.5,18.596C2.574,18.061 2.001,17.07 2,16.001L2,7.999C2.001,6.93 2.574,5.939 3.5,5.404L3.504,5.402L10.504,1.402C11.429,0.869 12.571,0.869 13.496,1.402L20.496,5.402L20.5,5.404C21.426,5.939 21.999,6.93 22,7.999L22,16.001ZM4,8.538L4,11.423L8,13.734C8.31,13.913 8.5,14.243 8.5,14.6L8.5,19.15L11,20.578L11,12.587L4,8.538ZM7.549,5.393L5.039,6.828L12,10.855L18.961,6.828L16.451,5.393L12.5,7.676C12.191,7.855 11.809,7.855 11.5,7.676L7.549,5.393ZM14.441,4.245L12.504,3.138L12.5,3.136C12.191,2.958 11.809,2.958 11.5,3.136L11.496,3.138L9.559,4.245L12,5.655L14.441,4.245ZM20,11.423L20,8.538L13,12.587L13,20.578L15.5,19.15L15.5,14.6C15.5,14.243 15.69,13.913 16,13.734L20,11.423ZM17.5,18.007L19.501,16.863C19.809,16.685 20,16.355 20,15.999L20,13.733L17.5,15.177L17.5,18.007ZM4,13.733L4,15.999C4,16.355 4.191,16.685 4.499,16.863L6.5,18.007L6.5,15.177L4,13.733Z" style="fill:url(#_Linear1);"/>
+        <g transform="matrix(1.05516,0,0,1.05516,-4.2563,0.00198744)">
+            <g transform="matrix(0.215519,0,0,0.215519,-43.135,-4.96717)">
+                <g transform="matrix(48,0,0,48,558.872,81.1111)">
+                </g>
+                <text x="328.196px" y="81.111px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:48px;fill:url(#_Linear2);">S<tspan x="362.822px 379.893px 414.519px 447.269px 478.661px 524.255px " y="81.111px 81.111px 81.111px 81.111px 81.111px 81.111px ">ISTEMA</tspan></text>
+            </g>
+            <g transform="matrix(0.082079,0,0,0.082079,0.977386,10.7849)">
+                <g transform="matrix(48,0,0,48,929.841,81.1111)">
+                </g>
+                <text x="366.521px" y="81.111px" style="font-family:'SFProDisplay-Semibold', 'SF Pro Display';font-weight:600;font-size:48px;fill:url(#_Linear3);">SOL<tspan x="456.38px " y="81.111px ">U</tspan>ÇÕES IMOBILIÁRIA<tspan x="900.192px " y="81.111px ">S</tspan></text>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(12.5983,-12.2666,13.4905,13.8553,2,22.9977)"><stop offset="0" style="stop-color:rgb(0,13,56);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(31,101,170);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(26.3736,-117.951,31.7015,7.08842,329.696,144.334)"><stop offset="0" style="stop-color:rgb(0,13,56);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(31,101,170);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(69.2505,-309.709,83.2403,18.6124,328.263,187.073)"><stop offset="0" style="stop-color:rgb(0,13,56);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(31,101,170);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
