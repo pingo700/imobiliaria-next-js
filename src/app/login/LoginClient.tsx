@@ -12,6 +12,12 @@ import { toast } from 'sonner'
 
 type Props = { nextParam: string }
 
+// ✅ ADICIONE: Interface para tipagem da resposta
+interface LoginResponse {
+  message?: string;
+  success?: boolean;
+}
+
 export default function LoginClient({ nextParam }: Props) {
   const router = useRouter()
 
@@ -57,7 +63,14 @@ export default function LoginClient({ nextParam }: Props) {
         body: JSON.stringify({ email, senha: password }),
       })
 
-      const data = [].catch(() => ({}))
+      // ✅ CORRIGIDO: Adicionar tipo LoginResponse
+      let data: LoginResponse = {};
+      try {
+        data = await res.json();
+      } catch {
+        data = {};
+      }
+      
       if (!res.ok) {
         const msg = data?.message || 'Credenciais inválidas'
         toast.error('Falha no login', { description: msg })
