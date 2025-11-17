@@ -1,66 +1,56 @@
-name: 🚀 Deploy Production - Imobiliária Sistema
+name: CI/CD
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build-and-deploy-production:
-    name: 🛠️ Build & Deploy to Production
+  build-and-test:
     runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: ${{ vars.URL }}
+
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: 📦 Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-
-      - name: 🔧 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'pnpm'
+          cache: 'npm'
 
-      - name: 📦 Install Dependencies
-        run: pnpm install --no-frozen-lockfile
+      - name: Instalar dependências
+        run: npm ci
 
-      - name: 🧪 Run Tests
-        run: |
-          if [ -f "package.json" ] && grep -q '"test"' package.json; then
-            pnpm test
-          else
-            echo "No tests found, skipping..."
-          fi
-          
-      - name: 🏗️ Build Project
-        run: pnpm run build:prod
+      - name: Rodar linter
+        run: npm run lint || true
 
-      - name: 🔍 Validate Build
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "❌ Build failed - dist directory not found"
-            exit 1
-          fi
-          echo "✅ Build validation passed"
+      - name: Rodar os testes
+        run: npm test
 
-      - name: 🚀 Deploy to Production
-        uses: easingthemes/ssh-deploy@main
+      - name: Verificar cobertura de testes
+        run: npm run test:coverage
+
+      - name: Build do projeto
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Deploy para Vercel
+        uses: amondnet/vercel-action@v25
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: ""
-          SOURCE: dist/
-          REMOTE_HOST: ${{ vars.REMOTE_HOST }}
-          REMOTE_USER: ${{ vars.REMOTE_USER }}
-          REMOTE_PORT: ${{ vars.REMOTE_PORT }}
-          TARGET: ${{ vars.TARGET }}
-
-      - name: ✅ Deployment Success
-        run: |
-          echo "🎉 Production deployment completed successfully!"
-          echo "🌐 URL: ${{ vars.URL }}"
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
