@@ -7,7 +7,7 @@ const HOSTS = (process.env.NEXT_PUBLIC_IMAGE_HOSTS ?? '')
   .filter(Boolean)
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // output: 'export',
   images: { unoptimized: true }, // export estático não tem Image Optimization
   // opcional:
   // trailingSlash: true, // gera /pagina/index.html ao invés de /pagina.html
